@@ -4,10 +4,13 @@
     <article class="post-article" role="article" itemscope itemtype="http://schema.org/Article">
 
       <header class="post-header">
+        {{#has tag="photo"}}
+          <img src={{image}} />
+        {{/has}}
         <h1 class="post-title mb-none" itemprop="headline">{{title}}</h1>
 
         <!-- Only notes have dates -->
-        {{#has tag="note"}}
+        {{#has tag="note, photo" }}
             <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">
               {{date format='dddd DD MMM YYYY'}}
             </time>

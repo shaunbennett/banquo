@@ -113,3 +113,62 @@ p {
 
   }
 }
+
+#photos {
+  align-content: flex-start;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 0;
+  flex-wrap: wrap;
+  height: auto;
+  justify-content: center;
+  padding: @padding-base 1% 1%;
+  max-width: 1440px;
+
+  .photo_piece {
+    min-width: 30%; // this + padding %'s, if > 33% will result in a wrap
+    flex: 1;
+    padding: 0 1%;
+    margin-bottom: 2%;
+
+    img {
+      width: 270px;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .overlay-container {
+      display: flex;
+      overflow: hidden;
+      position: relative;
+      text-align: center;
+    }
+
+
+    .image_overlay {
+      align-items: center;
+      background: rgba(0,0,0,0.4);
+      bottom: 0;
+      width: 100%;
+      color: white;
+      display: flex;
+      justify-content: center;
+      left: 0;
+      position: absolute;
+      text-transform: uppercase;
+
+      p {
+        //background: rgba(255,0,0,0.7);
+        //padding: 10px;
+        //border: 1px solid white;
+      }
+
+    }
+
+    @media(max-width: 900px) {
+      min-width: 50%;
+    }
+
+  }
+}

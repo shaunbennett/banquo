@@ -1,0 +1,22 @@
+{{!< default}}
+<main id="photos" role="main">
+    {{#get "posts" filter="tags:photo"}}
+      {{#foreach posts}}
+        <article class="photo_piece" role="article" itemscope itemtype="http://schema.org/Article">
+
+            <!-- "project" post must have tag "work" and a featured image.  -->
+            <a href="{{{url}}}">
+                <div class="overlay-container">
+                    <img src={{image}} />
+                    <div class="image_overlay">
+                        <p>{{date format='dddd DD MMM YYYY'}}</p>
+                    </div>
+                </div>
+            </a>
+
+        </article>
+      {{/foreach}}
+    {{/get}}
+</main>
+
+<!-- {{> footer}} -->
